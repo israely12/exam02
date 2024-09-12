@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <p>BATALION FORCE MENEGEMENT</p>
+    </header>
+    <div  id="container">
+      <div id="formdiv" >
+        <form  id="form" action="">
+            <input type="text" id="fname" class="input"  placeholder="Full Name" />
+            <input type="text" id="rank" class="input" placeholder="Rank" />
+            <input type="text" id="position" class="input" placeholder="Position" />
+            <input type="text" id="platoon"  class="input" placeholder="Platoon" />
+            <input type="text" id="time"  class="input"placeholder="Mission Time (seconsd)" />
+            <select class="input" id="status">
+                <option class="input" value="active">Active</option>
+                <option class="input" value="reserve">Reserve</option>
+                <option class="input" value="retired">Retired</option>
+            </select>
+            <input type="submit" id="submitbutton" value=" Add Personnel" />
+        </form>
+      </div>
+      <p id="forces">FORCES OVERVIEW</p>
+      <div id="tablediv">
+        <table id="headtable">
+            <thead>
+                <tr>
+                    <th class="field"><button id="buttonfname">Full Name</button></th>
+                    <th class="field">RANK</th>
+                    <th class="field">POSITION</th>
+                    <th class="field">PLATOON</th>
+                    <th class="field">STATUS</th>
+                    <th class="field">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
