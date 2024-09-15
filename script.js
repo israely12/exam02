@@ -92,47 +92,47 @@ function addPersonel(event) {
     catchTable.appendChild(newRow);
   }
 
-  function openEditModal(name,rank,position,platoon,status) {
-    currentPersonelName = name;
-    editName.value = name;
-    editRank.value = rank;
-    editPosition.value = position;
-    editplatoon.value = platoon;
-    editStatus.value = status;
-    editModal.style.display = "block";
-  }
+//   function openEditModal(name,rank,position,platoon,status) {
+//     currentPersonelName = name;
+//     editName.value = name;
+//     editRank.value = rank;
+//     editPosition.value = position;
+//     editplatoon.value = platoon;
+//     editStatus.value = status;
+//     editModal.style.display = "block";
+//   }
 
-  function saveEdit() {
-    const newName = editName.value.trim();
+//   function saveEdit() {
+//     const newName = editName.value.trim();
     
-    let personels = JSON.parse(localStorage.getItem("personels")) || [];
-    personels = personels.map((personel) => {
-      if (personel.name === currentPersonelName) {
-        personel.personel = newName;
-      }
-      return personel;
-    });
-    localStorage.setItem("personels", JSON.stringify(personels));
-    clearTable();
-    loadPersonelsFromLocalStorage();
-    closeModal.click();
-  }
+//     let personels = JSON.parse(localStorage.getItem("personels")) || [];
+//     personels = personels.map((personel) => {
+//       if (personel.name === currentPersonelName) {
+//         personel.personel = newName;
+//       }
+//       return personel;
+//     });
+//     localStorage.setItem("personels", JSON.stringify(personels));
+//     clearTable();
+//     loadPersonelsFromLocalStorage();
+//     closeModal.click();
+//   }
   
-  closeModal.addEventListener("click", function () {
-    editModal.style.display = "none";
-  });
+//   closeModal.addEventListener("click", function () {
+//     editModal.style.display = "none";
+//   });
   
-  window.onclick = function (event) {
-    if (event.target === editModal) {
-      editModal.style.display = "none";
-    }
-  };
+//   window.onclick = function (event) {
+//     if (event.target === editModal) {
+//       editModal.style.display = "none";
+//     }
+//   };
   
-  saveEditButton.addEventListener("click", saveEdit);
+//   saveEditButton.addEventListener("click", saveEdit);
   
 
   function savePersonelToLocalStorage(name,rank,position,platoon,status) {
-    let personels = JSON.parse(localStorage.getItem("missions")) || [];
+    let personels = JSON.parse(localStorage.getItem("personels")) || [];
     personels.push({ name,rank,position,platoon,status });
     localStorage.setItem("personels", JSON.stringify(personels));
   }
@@ -144,14 +144,14 @@ function addPersonel(event) {
   }
   
 
-  function loadpersonelsFromLocalStorage() {
+  function loadPersonelsFromLocalStorage() {
     const personels = JSON.parse(localStorage.getItem("personels")) || [];
     personels.forEach((personel) => {
         addPersonelToTable(personel.name, personel.rank, personel.position, personel.platoon, personel.status);
     });
   }
   
-  document.addEventListener("DOMContentLoaded", loadpersonelsFromLocalStorage);
+  document.addEventListener("DOMContentLoaded", loadPersonelsFromLocalStorage);
   
  
   
